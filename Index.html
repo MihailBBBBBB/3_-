@@ -3,27 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Mihails Bogdans Portfolio</title>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <p class="name">Mihails Bogdans</p>
+            <h1 class="name">Mihails Bogdans</h1>
             <nav class="navigator">
-                <a href="#">Home</a>
-                <a href="#">About me</a>
-                <a href="#">Skills</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact</a>
+                <a href="" onclick="scrollHome()">Home</a>
+                <a href="" onclick="">About me</a>
+                <a href="" onclick="">Skills</a>
+                <a href="" onclick="">Projects</a>
+                <a href="" onclick="">Contact</a>
             </nav>
             <button id="dark-mode-toggle" class="dark-mode-btn">🌙 Dark Mode</button>
         </div>
     </header>
+    <aside>
+        <div class="aside-content">
+            <p class="aside-text">This this beta</p>
+        </div>
+    </aside>
     <main>
         <section class="intro-section">
             <h1>Welcome to My Portfolio!</h1>
             <p>Explore my projects, skills, and contact details.</p>
+        </section>
+        <section class="About-me-section">
+            <h2>About me</h2>
+        </section>
+        <section class="Skills-section">
+            <h2>Skills</h2>
+        </section>
+        <section class="Projects-section">
+            <h2>Projects</h2>
+        </section>
+        <section class="Contact-section">
+            <h2>Contact</h2>
         </section>
     </main>
     <footer>
@@ -41,24 +58,25 @@
 
 
 <style>
-/* General Styling */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!General Styling */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background-color: #333;
+    background-color: #2b2b2b;
     color: white;
-    padding: 15px 0;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     width: 100%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
+    z-index: 1000;
 }
 
 .header-content {
@@ -70,9 +88,10 @@ header {
 }
 
 .name {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-left: 20px;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .navigator {
@@ -82,37 +101,61 @@ header {
 .navigator a {
     text-decoration: none;
     color: white;
-    margin: 0 15px;
-    font-size: 1.1em;
+    margin: 0 20px;
+    font-size: 1.2em;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
 .navigator a:hover {
-    color: #1abc9c;
+    color: #dbcaa4;
+    border-bottom: 2px solid #dbcaa4;
 }
 
-/* Dark mode toggle button */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Dark Mode Toggle Button */
 .dark-mode-btn {
-    background-color: transparent;
+    background-color: #333;
     border: 1px solid white;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 16px;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    transition: hover 0.25s, 0.25s;
+    border-radius: 25px;
+    margin-left: 20px;
 }
 
 .dark-mode-btn:hover {
-    background-color: #1abc9c;
-    border-color: #1abc9c;
+    background-color: #dbcaa4;
+    color: #333;
+    border-color: #dbcaa4;
+    letter-spacing: 2px;
 }
 
-/* Main Section */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Aside Section */
+aside {
+    background-color: #474747;
+    color: white;
+    padding: 20px;
+    position: relative;
+
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.aside-text {
+    margin-left: 20px;
+    font-size: 1.2em;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Main Section */
 .intro-section {
     text-align: center;
-    padding: 100px 20px;
-    background-color: #1abc9c;
-    color: white;
+
+    background-color: #dbcaa4;
+    color: #ffffff;
     min-height: 80vh;
     display: flex;
     flex-direction: column;
@@ -121,21 +164,24 @@ header {
 }
 
 .intro-section h1 {
-    font-size: 3em;
+    font-size: 3.2em;
     margin: 0;
     padding-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .intro-section p {
     font-size: 1.5em;
+    font-weight: 300;
 }
 
-/* Footer */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Footer Section */
 footer {
-    background-color: #333;
+    background-color: #2b2b2b;
     color: white;
-    padding: 20px 0;
+    padding: 25px 0;
     text-align: center;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .contact-info {
@@ -153,14 +199,18 @@ footer {
     padding-left: 10px;
 }
 
-/* Dark Mode */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Dark Mode */
 body.dark-mode {
     background-color: #121212;
-    color: #f4f4f4;
+    color: #f5f5f5;
 }
 
 header.dark-mode {
     background-color: #1a1a1a;
+}
+
+aside.dark-mode {
+    background-color: #202020;
 }
 
 footer.dark-mode {
@@ -169,14 +219,14 @@ footer.dark-mode {
 
 .intro-section.dark-mode {
     background-color: #333;
-    color: #f4f4f4;
+    color: #f5f5f5;
 }
 
 .navigator a.dark-mode {
-    color: #f4f4f4;
+    color: #f5f5f5;
 }
 
-/* Responsive Design */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Responsive Design */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -185,11 +235,15 @@ footer.dark-mode {
 
     .navigator a {
         margin: 10px 0;
-        font-size: 1.2em;
+        font-size: 1.1em;
+    }
+
+    .dark-mode-btn {
+        margin-top: 15px;
     }
 
     .intro-section h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
 
     .intro-section p {
@@ -197,21 +251,21 @@ footer.dark-mode {
     }
 }
 
+
 </style>
 
 <script>
-    // Get the dark mode toggle button
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-// Add a click event listener to the button
+
 darkModeToggle.addEventListener('click', () => {
     // Toggle dark mode class on body and relevant elements
     document.body.classList.toggle('dark-mode');
     document.querySelector('header').classList.toggle('dark-mode');
+    document.querySelector('aside').classList.toggle('dark-mode');
     document.querySelector('footer').classList.toggle('dark-mode');
     document.querySelector('.intro-section').classList.toggle('dark-mode');
 
-    // Update button text based on current mode
     if (document.body.classList.contains('dark-mode')) {
         darkModeToggle.textContent = '☀️ Light Mode';
     } else {
@@ -219,4 +273,12 @@ darkModeToggle.addEventListener('click', () => {
     }
 });
 
+
+function scrollHome() {
+    window.scroll({
+        top: 0,
+        behavior: "smooth",
+    });
+};
+// scroll gfdbfd
 </script>

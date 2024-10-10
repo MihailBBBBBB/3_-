@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Mihails Bogdans Portfolio</title>
 </head>
 <body>
@@ -48,6 +47,16 @@
         </section>
         <section class="second-section">
             <h1>Projects</h1>
+            <div class="card">
+                <img src="8476676.png" alt="" class="todo-img" width="150" height="100">
+                <p class="description">
+                    The program Todolist, which has registration with a login, allows you to create lists and add various tasks with a timer.
+                    <span id="more-text" style="display: none;">
+                        <br><br>I did this project with my friend Vladislav from the same group where I study. It was an examination program for finishing the second year of programming.
+                </p>
+                <button class="learn-more-btn" onclick="showMore()">Learn more</button>
+                <a href="https://github.com/vladignatovs/To-Do-List" class="info-btn">More info</a>
+            </div>
         </section>
         <section class="first-section">
             <h1>Contact</h1>
@@ -230,6 +239,74 @@ img {
     filter: brightness(50%);
 }
 
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Card Styling */
+.card {
+    background: linear-gradient(135deg, #dbcaa4, #9e792a);
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.todo-img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a90e2;
+    background-color: transparent;
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.learn-more-btn:hover {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.info-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.info-btn:hover {
+    background-color: #2114df;
+    color: #fff;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Footer Section */
 footer {
     background-color: #2b2b2b;
@@ -267,6 +344,11 @@ header.dark-mode {
 
 aside.dark-mode {
     background-color: #202020;
+}
+
+.card.dark-mode {
+    background: linear-gradient(135deg, #434343 0%, black 100%);
+    filter: brightness(70%);
 }
 
 footer.dark-mode {
@@ -329,6 +411,7 @@ darkModeToggle.addEventListener('click', () => {
     document.querySelector('header').classList.toggle('dark-mode');
     document.querySelector('aside').classList.toggle('dark-mode');
     document.querySelector('footer').classList.toggle('dark-mode');
+    document.querySelector('.card').classList.toggle('dark-mode');
     document.querySelectorAll('section').forEach(section => {
         section.classList.toggle('dark-mode');
     });
@@ -364,16 +447,29 @@ function scrollSkills() {
 
 function scrollProjects() {
     window.scroll({
-        top: 2320,
+        top: 2280,
         behavior: "smooth",
     });
 };
 
 function scrollContact() {
     window.scroll({
-        top: 3070,
+        top: 89243954,
         behavior: "smooth",
     });
 };
+
+function showMore() {
+    var moreText = document.getElementById("more-text");
+    var btnText = document.querySelector(".learn-more-btn");
+    
+    if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btnText.textContent = "Learn less";  // Change button text
+    } else {
+        moreText.style.display = "none";
+        btnText.textContent = "Learn more";  // Revert button text
+    }
+}
 
 </script>

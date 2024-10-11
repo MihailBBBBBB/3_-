@@ -33,6 +33,7 @@
             <h1>About me</h1>
             <img src="foto.jpg" alt="" width="400" height="300">
             <p>I can bench 105 kg, I am 18 yo and my weight is 68 kg.</p>
+            <button class="learn-more-btn" id="learn-more-AY" onclick="AlertMoreInfo()">Learn more</button>
         </section>
         <section class="first-section">
             <h1>Skills</h1>
@@ -214,6 +215,12 @@ section p {
 
 img {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#learn-more-AY {
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -465,11 +472,15 @@ function showMore() {
     
     if (moreText.style.display === "none") {
         moreText.style.display = "inline";
-        btnText.textContent = "Learn less";  // Change button text
+        btnText.textContent = "Learn less";  
     } else {
         moreText.style.display = "none";
-        btnText.textContent = "Learn more";  // Revert button text
+        btnText.textContent = "Learn more";  
     }
+}
+
+function AlertMoreInfo() {
+    alert("There is nothing to learn more😢😢😢");
 }
 
 </script>
